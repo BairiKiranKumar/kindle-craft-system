@@ -11,3 +11,4 @@ __pycache__/
 **/assets/cover/*.jpg
 **/reviews/automated_qa.json
 *.zip
+.playwright-mcp/

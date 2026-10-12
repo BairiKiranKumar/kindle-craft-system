@@ -100,7 +100,7 @@ def create(args):
  (p/'HANDOFF.md').write_text(f'# Agent handoff: {slug}\n\nCurrent stage: RESEARCH (not yet production-approved)\n\nNext step: research competitors using current Amazon listings, refine 50 individual scenes, record evidence in research/competitive_scan.csv.\nDo not publish. Do not assert sales or bestseller data without dated evidence.\n\nResume: read root AGENTS.md, project.json, scenes.json, metadata.json, reviews/review.md, HANDOFF.md.\n',encoding='utf-8')
  (p/'reviews/review.md').write_text('# Human review log\n\n- [ ] Theme and competitive research evidence reviewed\n- [ ] Title, brand, trademarks checked\n- [ ] Every illustration is original, unique, child-appropriate and technically clean\n- [ ] Publishing rights of each image verified\n- [ ] Physical printed proof ordered and checked\n- [ ] Amazon metadata and category selections checked\n- [ ] AI-generated images disclosure answered accurately\n- [ ] Final go/no-go publication approval by account owner\n',encoding='utf-8')
  (p/'research/competitive_scan.csv').write_text('checked_date_utc,marketplace,amazon_url,title,author,format,list_price_usd,page_count,review_count,bsr_if_visible,search_phrase,differentiation,notes\n',encoding='utf-8')
- (p/'assets/art/README.md').write_text('Save numbered 300-effective-DPI ORIGINAL artworks here: 001.png, 002.png ... For the 8.5x11 no-bleed template, the illustrated area is 7.2x9.4 inches; minimum image dimensions approximately 2160x2820 px. Review each scene then manually mark approved and rights_checked in scenes.json. Never upscale low-quality artwork just to pass validation.\n',encoding='utf-8')
+ (p/'assets/art/README.md').write_text('Save numbered 300-effective-DPI ORIGINAL artworks here: 001.png, 002.png ... For the 8.5x11 no-bleed template, the illustrated area is 7.2x9.3 inches; minimum image dimensions exactly 2160x2790 px at 300 DPI. Review each scene then manually mark approved and rights_checked in scenes.json. Never upscale low-quality artwork just to pass validation; simple image resizing does not create genuine print-quality line art.\n',encoding='utf-8')
  print(f'Created: {p}\nIllustration prompts: {p/"scenes.json"}\nFinish each numbered PNG, then use: python scripts/kiran.py validate --project {slug}')
 
 def price_estimate(price,pages):
@@ -130,7 +130,8 @@ def check_project(p):
  if cfg['interior']!='black_and_white_white_paper_no_bleed':errors.append('Only black-white no-bleed interiors supported')
  if len(scenes)!=cfg['illustration_count']:errors.append('Scene count mismatch')
  if len(scenes)<MIN_SCENES:errors.append('Fewer than 24 illustrations')
- if not 24<=2+len(scenes)<=110:warnings.append('Printing cost formula changes above 110 pp; review manually')
+ total_pages=2+len(scenes)*2
+ if not 24<=total_pages<=110:warnings.append('Printing cost formula changes above 110 pp; review manually')
  fingerprints={};names=set()
  for sc in scenes:
   fn=sc['file'];f=p/'assets/art'/fn
@@ -164,7 +165,7 @@ def check_project(p):
  if not cfg.get('kdp_ai_images_disclose'):warnings.append('AI image disclosure flag false: confirm truthfulness during KDP upload')
  out={'checked_utc':datetime.now(timezone.utc).isoformat(),'project':cfg['project_slug'],
     'status':'PASS_LOCAL_PREFLIGHT' if not errors else 'BLOCKED','errors':errors,'warnings':warnings,
-    'assets':checks,'page_count_expected':len(scenes)+2,'price_estimate':price_estimate(float(cfg['price_usd']),2+len(scenes))}
+    'assets':checks,'page_count_expected':len(scenes)*2+2,'price_estimate':price_estimate(float(cfg['price_usd']),2+len(scenes)*2)}
  write_json(p/'reviews/automated_qa.json',out)
  return out
 
@@ -215,6 +216,8 @@ def make_interior(p,cfg,scenes):
   x=(W-width)/2;y=(H-height)/2
   c.drawImage(image,x,y,width=width,height=height,mask='auto')
   c.showPage()
+  # Single-sided interior: blank reverse page follows each illustration to prevent bleed-through
+  c.showPage()
  c.save();return out
 
 def make_cover(p,cfg,scenes,pages):
@@ -258,10 +261,10 @@ def make_cover(p,cfg,scenes,pages):
  return out
 
 def make_pack(p,cfg,scenes):
- meta=load(p/'metadata.json');n=len(scenes);price=price_estimate(float(cfg['price_usd']),n+2)
+ meta=load(p/'metadata.json');n=len(scenes);total_pages=n*2+2;price=price_estimate(float(cfg['price_usd']),total_pages)
  text=(f'KDP MANUAL ENTRY — {cfg["title"]}\n\n'
  f'Title: {cfg["title"]}\nSubtitle: {cfg["subtitle"]}\nAuthor: {cfg["author_display_name"]}\n'
- f'Language: {cfg["language"]}\nFormat: Paperback\nPrint: black ink, white paper\nTrim: 8.5 x 11\nBleed: NO BLEED\nFinish: Matte (suggested)\nPages: {n+2}\n'
+ f'Language: {cfg["language"]}\nFormat: Paperback\nPrint: black ink, white paper\nTrim: 8.5 x 11\nBleed: NO BLEED\nFinish: Matte (suggested)\nPages: {total_pages}\n'
  f'ISBN: Free KDP ISBN if eligible; do not invent an ISBN\nLow content: No, normally (verify for actual content)\n'
  f'Primary marketplace: {cfg["primary_marketplace"]}\nSuggested US list price: ${float(cfg["price_usd"]):.2f}\n'
  f'Royalty estimate: ${price["royalty_usd"]:.2f} per Amazon.com sale before deductions\n'
@@ -289,10 +292,11 @@ def cmd_build(args):
  p=project_path(args.project);r=check_project(p)
  if r['errors']:raise SystemExit('BLOCKED: Fix validation errors; see '+str(p/'reviews/automated_qa.json'))
  cfg=load(p/'project.json');scenes=load(p/'scenes.json')
- a=make_interior(p,cfg,scenes);b=make_cover(p,cfg,scenes,len(scenes)+2);make_pack(p,cfg,scenes)
+ total_pages=len(scenes)*2+2
+ a=make_interior(p,cfg,scenes);b=make_cover(p,cfg,scenes,total_pages);make_pack(p,cfg,scenes)
  if PdfReader:
   pdf=PdfReader(str(a));cover=PdfReader(str(b))
-  assert len(pdf.pages)==len(scenes)+2
+  assert len(pdf.pages)==total_pages
   assert len(cover.pages)==1
  print('LOCAL FILES PRODUCED (NOT automatically published):\n',a,'\n',b,'\n',p/'exports/kdp_manual_entry.txt')
  print('NEXT: KDP official cover template check, KDP Print Previewer, physical proof, publication approval.')
@@ -333,6 +337,6 @@ def main():
  for cmd,fn in [('validate',cmd_validate),('build',cmd_build),('status',cmd_status)]:
   a=sub.add_parser(cmd);a.add_argument('--project',required=True);a.set_defaults(func=fn)
  a=sub.add_parser('contact');a.add_argument('--project',required=True);a.set_defaults(func=cmd_contact)
- a=sub.add_parser('pricing');a.add_argument('--pages',type=int,default=52);a.add_argument('--price',type=float);a.set_defaults(func=cmd_price)
+ a=sub.add_parser('pricing');a.add_argument('--pages',type=int,default=102);a.add_argument('--price',type=float);a.set_defaults(func=cmd_price)
  args=ap.parse_args();args.func(args)
 if __name__=='__main__':main()
