@@ -1,0 +1,5 @@
+Optional premium cover illustration brief — output as assets/cover/front_art.png
+
+Create a distinct, ORIGINAL group illustration for an English preschool coloring book titled [TITLE], ages 3-5. Do NOT include typography, text, watermarks, logos, or recognizable copyrighted characters. A friendly ensemble of [THEME] characters in a warm simple visual style, expressive gentle faces, soft pastel tones, clear foreground hierarchy, cozy paper-cut-inspired shapes, bright but controlled cream/mint/coral/yellow palette, clean compositions readable at a tiny Amazon thumbnail. Portrait hero asset, centered with generous safe whitespace, white or clean background (transparent when available). Output genuine high-resolution RGB artwork suitable for a 4.2 x 4.1-inch printed cover focal area at 300 effective DPI or higher (minimum 1260 x 1230 px, larger preferred); use a CMYK-prepared final full-wrap PDF when practical.
+
+The finished cover PDF MUST use actual title, subtitle and author text from project.json set by the layout script, not AI-generated raster text. For every cover, compare to official Amazon KDP cover template. Human verification required.

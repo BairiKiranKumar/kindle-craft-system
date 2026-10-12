@@ -1,0 +1,5 @@
+---
+description: Kiran Kindle Craft System publishing rules; applies to all project files
+alwaysApply: true
+---
+Read `AGENTS.md` and active `products/<slug>/HANDOFF.md` before any work. Follow stage gates and human approval rules. Use project's `project.json` as a single source of truth; don't invent Amazon research, ISBNs, sales or completed illustrations. Update HANDOFF.md at the end.

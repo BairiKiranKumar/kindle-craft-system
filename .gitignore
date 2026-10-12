@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+**/exports/
+**/assets/art/*.png
+**/assets/art/*.jpg
+**/assets/art/*.jpeg
+**/assets/cover/*.png
+**/assets/cover/*.jpg
+**/reviews/automated_qa.json
+*.zip

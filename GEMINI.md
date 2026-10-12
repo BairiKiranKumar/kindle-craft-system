@@ -1,0 +1,2 @@
+# Antigravity / Gemini entrypoint
+Use root `AGENTS.md` as the source of truth and read the current product's `HANDOFF.md`. Work on the current project folder, avoid reinitializing it. Save generated art only to `products/<slug>/assets/art/NNN.png` if your image tool has legal access to save actual PNG files. A text-only model must not pretend to have generated the files. Keep QA human gates locked.
