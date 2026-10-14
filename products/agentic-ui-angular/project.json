@@ -1,0 +1,34 @@
+{
+  "slug": "agentic-ui-angular",
+  "title": "Agentic UI with Angular",
+  "subtitle": "Architecting Agentic AI with Open Standards",
+  "version": "1.0.0",
+  "date": "2026-10-14",
+  "author": "@kiranbuildswithai",
+  "publisher": "None",
+  "license": "All rights reserved. Technical publication.",
+  "keywords": [
+    "Angular",
+    "Agentic UI",
+    "AG-UI",
+    "A2UI",
+    "MCP Apps",
+    "CopilotKit",
+    "Signals",
+    "LLM Frontend Integration",
+    "Human-in-the-Loop"
+  ],
+  "chapters": [
+    { "id": "preface", "file": "00_preface.md", "title": "Preface & Prerequisites" },
+    { "id": "ch01", "file": "01_from_agents_to_agentic_ui.md", "title": "Chapter 1: From Agents to Agentic UI" },
+    { "id": "ch02", "file": "02_ag_ui_standard_for_agentic_interfaces.md", "title": "Chapter 2: AG-UI - The Open Protocol for Agentic Interfaces" },
+    { "id": "ch03", "file": "03_a2ui_generative_dynamic_ui_runtime.md", "title": "Chapter 3: A2UI - Generative Dynamic UIs at Runtime" },
+    { "id": "ch04", "file": "04_mcp_apps_interactive_tool_results.md", "title": "Chapter 4: MCP Apps - Interactive Tool Results & Widgets" },
+    { "id": "ch05", "file": "05_hitl_human_in_the_loop_patterns.md", "title": "Chapter 5: Human-in-the-Loop (HITL) Patterns" },
+    { "id": "ch06", "file": "06_guardrails_and_security.md", "title": "Chapter 6: Guardrails, Validation, and Client Sandboxes" },
+    { "id": "ch07", "file": "07_sub_agents_and_workflows.md", "title": "Chapter 7: Sub-Agents, Workflows, and Coordinated Execution" },
+    { "id": "ch08", "file": "08_state_management_with_ag_ui.md", "title": "Chapter 8: State Management and Reactive Synchronization" },
+    { "id": "ch09", "file": "09_testing_agentic_frontends.md", "title": "Chapter 9: Testing Agentic Frontends and Mock Frameworks" },
+    { "id": "ch10", "file": "10_multimodality_and_advanced_patterns.md", "title": "Chapter 10: Multimodality, Vision, Audio, and Production Roadmap" }
+  ]
+}

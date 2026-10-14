@@ -1,0 +1,38 @@
+{
+  "slug": "mcp-agui-a2ui",
+  "title": "MCP, AG-UI & A2UI: The New Frontend Stack",
+  "subtitle": "Architecting Tool Connections, Event Streaming, and Generative Interfaces",
+  "version": "1.0.0",
+  "date": "2026-10-14",
+  "author": "@kiranbuildswithai",
+  "publisher": "None",
+  "targetPages": "65-75",
+  "license": "All rights reserved. Technical publication.",
+  "keywords": [
+    "Model Context Protocol",
+    "MCP",
+    "AG-UI",
+    "A2UI",
+    "Generative UI",
+    "Frontend AI Architecture",
+    "Human in the Loop",
+    "JSON-RPC 2.0",
+    "Server-Sent Events",
+    "TypeScript"
+  ],
+  "chapters": [
+    { "id": "ch00", "file": "00_frontmatter.md", "title": "Frontmatter: The Next Generation Frontend Architecture" },
+    { "id": "ch01", "file": "01_broken_frontend_agent_boundary.md", "title": "Chapter 1: The Broken Frontend-Agent Boundary" },
+    { "id": "ch02", "file": "02_mcp_under_the_hood.md", "title": "Chapter 2: MCP Under the Hood" },
+    { "id": "ch03", "file": "03_ag_ui_protocol_anatomy.md", "title": "Chapter 3: AG-UI Protocol Anatomy" },
+    { "id": "ch04", "file": "04_a2ui_generative_interfaces.md", "title": "Chapter 4: A2UI and Generative Interfaces" },
+    { "id": "ch05", "file": "05_client_vs_server_tool_calling.md", "title": "Chapter 5: Client-Side vs. Server-Side Tool Calling" },
+    { "id": "ch06", "file": "06_reactive_state_synchronization.md", "title": "Chapter 6: Reactive State Synchronization" },
+    { "id": "ch07", "file": "07_human_in_the_loop_approvals.md", "title": "Chapter 7: Human-in-the-Loop and Approval Gates" },
+    { "id": "ch08", "file": "08_capstone_architecture_dashboard.md", "title": "Chapter 8: Capstone Architecture: Enterprise AI Customer-Support Dashboard" },
+    { "id": "ch09", "file": "09_capstone_tool_execution_telemetry.md", "title": "Chapter 9: Implementing Tool Execution and Live Telemetry" },
+    { "id": "ch10", "file": "10_capstone_dynamic_cards_escalation.md", "title": "Chapter 10: Dynamic Resolution Cards and Human Escalation" },
+    { "id": "ch11", "file": "11_production_hardening_checklist.md", "title": "Chapter 11: Production Hardening, Sandboxing and Deployment" },
+    { "id": "ch12", "file": "12_appendix_compatibility_matrix.md", "title": "Appendix: Protocol Schemas and Compatibility Matrix" }
+  ]
+}

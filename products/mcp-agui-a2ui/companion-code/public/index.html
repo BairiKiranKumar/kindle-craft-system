@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise AI Support Dashboard - MCP, AG-UI & A2UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header" role="banner">
+    <div class="header-brand">
+      <div class="logo-mark" aria-hidden="true">AI</div>
+      <div>
+        <h1>Enterprise Support Console</h1>
+        <p class="subtitle">MCP (2025-11-25) &bull; AG-UI (v1.0.0) &bull; A2UI (v0.9.1)</p>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <div class="operator-selector">
+        <label for="operator-role">Operator Role:</label>
+        <select id="operator-role" aria-label="Select Active Operator Role">
+          <option value="SUPPORT_AGENT">SUPPORT_AGENT (Tier 1)</option>
+          <option value="TEAM_LEAD" selected>TEAM_LEAD (Supervisor)</option>
+          <option value="FINANCE_ADMIN">FINANCE_ADMIN (Executive)</option>
+        </select>
+      </div>
+
+      <div class="connection-status" id="connection-status" role="status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span class="status-label">Connecting SSE...</span>
+      </div>
+
+      <button id="btn-reset" class="btn btn-secondary btn-sm" aria-label="Reset Mock Database State">Reset State</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="dashboard-grid" role="main">
+    <!-- Left Column: Customer Conversation & Telemetry -->
+    <section class="panel conversation-panel" aria-labelledby="chat-heading">
+      <div class="panel-header">
+        <h2 id="chat-heading">Customer Conversation & Reasoning</h2>
+        <span class="badge" id="agent-state-badge">IDLE</span>
+      </div>
+
+      <!-- Quick Action Scenarios -->
+      <div class="quick-scenarios" role="toolbar" aria-label="Sample Scenarios">
+        <span class="toolbar-label">Scenarios:</span>
+        <button class="chip" data-prompt="Lookup order ord_8801 for customer alice@example.com and check delivery status.">1. Lookup Order</button>
+        <button class="chip" data-prompt="Check shipping SLA delay for order ord_8801 and evaluate compensation.">2. Check SLA Delay</button>
+        <button class="chip chip-danger" data-prompt="Customer Alice Walker complains that order ord_8801 arrived 5 days late with damaged packaging. Issue a $45.00 courtesy refund immediately.">3. Request $45 Refund (HITL Gate)</button>
+      </div>
+
+      <!-- Messages Transcript -->
+      <div class="chat-transcript" id="chat-transcript" role="log" aria-live="polite" aria-relevant="additions text">
+        <div class="message system-message">
+          <p><strong>System:</strong> Gateway initialized. Ready to process support tickets. Select a scenario above or enter a customer prompt below.</p>
+        </div>
+      </div>
+
+      <!-- Live Telemetry Pill Container -->
+      <div class="telemetry-bar" id="telemetry-bar" aria-label="Live Protocol Telemetry" role="status">
+        <div class="telemetry-label">Live Protocol Telemetry:</div>
+        <div class="telemetry-pills" id="telemetry-pills">
+          <span class="telemetry-empty">Awaiting agent execution...</span>
+        </div>
+      </div>
+
+      <!-- User Chat Input Form -->
+      <form class="chat-form" id="chat-form" aria-label="Send Customer Prompt">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Ask agent to investigate customer or order..."
+          aria-label="Support prompt input"
+          required
+        />
+        <button type="submit" id="btn-send" class="btn btn-primary">Send Prompt</button>
+      </form>
+    </section>
+
+    <!-- Right Column: A2UI Generative Workspace -->
+    <section class="panel workspace-panel" aria-labelledby="workspace-heading">
+      <div class="panel-header">
+        <h2 id="workspace-heading">Generative Workspace (A2UI v0.9.1)</h2>
+        <span class="badge badge-info" id="active-order-badge">NO ORDER</span>
+      </div>
+
+      <!-- Notification Alert Container -->
+      <div id="alert-container" class="alert-container" role="region" aria-live="assertive"></div>
+
+      <!-- Dynamic A2UI Cards Container -->
+      <div class="a2ui-canvas" id="a2ui-canvas" role="region" aria-label="Generated UI Cards">
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon" aria-hidden="true">📋</div>
+          <p>No active generative cards rendered.</p>
+          <small>Ask the agent to look up an order or trigger an SLA evaluation to see dynamic A2UI widgets.</small>
+        </div>
+      </div>
+
+      <!-- Audit History Ledger Section -->
+      <div class="audit-section" aria-labelledby="audit-heading">
+        <div class="audit-header">
+          <h3 id="audit-heading">Tamper-Evident SHA-256 Audit Trail</h3>
+          <span class="badge badge-mono" id="audit-count">0 BLOCKS</span>
+        </div>
+        <div class="audit-ledger" id="audit-ledger" role="feed" aria-label="Cryptographic Audit Blocks">
+          <div class="audit-empty">Awaiting audit events...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Client Script -->
+  <script src="app.js"></script>
+</body>
+</html>
