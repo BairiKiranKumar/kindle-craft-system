@@ -1,74 +1,76 @@
-# Pilot Visual Review: Little Animal Adventures (Refined Scenes 001–005)
+# Pilot Visual Review: Little Animal Adventures (Final Scenes 001–005)
 
 **Product:** Little Animal Adventures (Preschool Children Ages 3–5)  
 **Format:** Paperback, 8.5 × 11 in, Black ink on white paper, No bleed, 102 pages (single-sided)  
-**Current Stage:** 06 PILOT ARTWORK REFINEMENT COMPLETED (Awaiting Owner Approval)  
-**Visual Benchmarks:** Elephant 001 (Master standard) and Fox 004  
+**Current Stage:** 07 FINAL PILOT ARTWORK CORRECTIONS COMPLETED (Awaiting Final Owner Decision)  
+**Visual Benchmarks:** Elephant 001 (Master standard)  
 **Human Gates:** `approved: false` and `rights_checked: false` strictly locked across all scenes.
 
 ---
 
-## 1. Revised Pilot Contact Sheet (Equal Visual Scale)
+## 1. Final Pilot Contact Sheet (Equal Visual Scale)
 
-All five refined pilot illustrations (001–005) rendered at identical visual scale, strictly aligned to the locked *Bold & Easy Animal Adventures* preschool style.
+All five verified pilot illustrations (001–005) rendered at identical visual scale, strictly aligned to the locked *Bold & Easy Animal Adventures* preschool style.
 
-- **Revised Contact Sheet:** `products/little-animal-adventures/reviews/pilot_contact_sheet.png`
+- **Final Contact Sheet:** `products/little-animal-adventures/reviews/pilot_contact_sheet.png`
+- **Focused Before/After Comparison (Scene 003):** `products/little-animal-adventures/reviews/before_after_003.png`
+- **Focused Before/After Comparison (Scene 004):** `products/little-animal-adventures/reviews/before_after_004.png`
 - **Master Before/After Sheet:** `products/little-animal-adventures/reviews/pilot_refinement_before_after.png`
 - **Full Series Contact Sheet:** `products/little-animal-adventures/reviews/contact_sheet.jpg`
+- **100% Pixel Inspection Matrix:** `products/little-animal-adventures/reviews/pilot_defect_inspection_crops.png`
+- **Archived v2 Masters & Raw Assets:** `products/little-animal-adventures/assets/art/archive_pilot_v2/`
 - **Archived v1 Masters & Raw Assets:** `products/little-animal-adventures/assets/art/archive_pilot_v1/`
 
-| Scene ID | Subject | Setting | Role / Change Status | White % | Black % | Effective DPI | Gate Status |
+| Scene ID | Subject | Setting | Role / Review Decision | White % | Black % | Effective DPI | Gate Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **001** | Elephant | Sunny garden | **Visual Benchmark (Untouched)** | 86.40% | 8.46% | 300 × 300 | **PENDING** (`approved: false`) |
-| **002** | Bunny | Grassy meadow | **Refined:** Simplified blanket & 6 seeds | 86.58% | 8.85% | 300 × 300 | **PENDING** (`approved: false`) |
-| **003** | Bear | Clear park | **Refined:** Single main string & clean paw | 90.65% | 5.82% | 300 × 300 | **PENDING** (`approved: false`) |
-| **004** | Fox | Art studio | **Refined:** Brush touches canvas with smiling sun | 86.70% | 8.12% | 300 × 300 | **PENDING** (`approved: false`) |
-| **005** | Lion | Cozy library | **Refined:** Simplified star book & plain lamp | 87.84% | 8.18% | 300 × 300 | **PENDING** (`approved: false`) |
+| **001** | Elephant | Sunny garden | **PASS** — Visual Benchmark (Untouched) | 86.40% | 8.46% | 300 × 300 | **PENDING** (`approved: false`) |
+| **002** | Bunny | Grassy meadow | **PASS** — Refined v2 (Untouched) | 86.58% | 8.85% | 300 × 300 | **PENDING** (`approved: false`) |
+| **003** | Bear | Clear park | **PASS (Corrected v3)** — Complete raised arm, spool grip & single string | 92.63% | 4.19% | 300 × 300 | **PENDING** (`approved: false`) |
+| **004** | Fox | Art studio | **PASS (Corrected v3)** — Sun inside canvas, brush touching ray tip | 85.80% | 8.72% | 300 × 300 | **PENDING** (`approved: false`) |
+| **005** | Lion | Cozy library | **PASS** — Refined v2 (Untouched) | 87.84% | 8.18% | 300 × 300 | **PENDING** (`approved: false`) |
 
 ---
 
-## 2. Before / After Scene Refinement Audit
+## 2. Before / After Scene Correction Audit (Task 7)
 
-Detailed review of the changes implemented for Task 6 across Scenes 002–005:
+Detailed review of the visual corrections executed in Task 7 for Scenes 003 and 004:
 
 ### Scene 001: Elephant Watering Flowers (Visual Benchmark)
-- **Status:** Preserved 100% untouched.
-- **Role:** Serves as the master anchor for character appeal, stroke weight (~18–28 px), and preschool visual density.
+- **Review Decision:** **PASS**. Preserved 100% untouched.
+- **Role:** Master benchmark for character appeal, line weight (~18–28 px), and preschool visual density.
 
 ### Scene 002: Bunny Strawberry Picnic
+- **Review Decision:** **PASS**. Preserved 100% untouched from Task 6.
 - **Visual Asset:** `reviews/before_after_002.png`
-- **Previous Defect:** Picnic blanket had a dense micro-checkerboard grid; strawberry had dozens of tiny seeds; meadow had extraneous grass clutter.
-- **Refinement Implemented:**
-  - Blanket replaced with wide, large squares designed for toddler coloring grips.
-  - Strawberry simplified to **6 large, clear teardrop seeds**.
-  - Meadow clutter eliminated; single gentle hill curve and one puffy cloud remain.
-  - Bunny's sweet smiling face, long ears, and strawberry activity fully preserved.
+- **Summary:** Wide-square blanket, 6 bold teardrop seeds, clean meadow hill curve, cute smiling bunny.
 
 ### Scene 003: Bear Flying a Kite
+- **Review Decision:** **CORRECTED v3** (Previous Task 6 candidate FAIL due to incomplete arm, malformed paw, dangling line).
 - **Visual Asset:** `reviews/before_after_003.png`
-- **Previous Defect:** Split/hollow string with thin filaments; loose dangling string loops and confusing lines near the body.
-- **Refinement Implemented:**
-  - Kite string replaced with **ONE clear, continuous solid main string** ($26\text{ px}$ wide) connecting the bear's raised paw directly to the diamond kite.
-  - Loose dangling string curve removed; paw cleanly closed around the line.
-  - Kite tail flows separately on the right with 3 large ribbon bows (zero overlap).
-  - Zero overlapping or confusing lines crossing the bear's torso.
+- **Previous Defect:** Incomplete raised arm outline, paw not clearly formed, short disconnected black stroke remained beside body.
+- **Task 7 Corrections Implemented:**
+  - Regenerated candidate asset from generator with complete anatomical coherence.
+  - **Raised Arm:** Fully closed, smooth, rounded arm contour extending naturally from the shoulder.
+  - **Paw & Spool Grip:** Distinct rounded paw visibly grasping a clean horizontal wooden kite spool/handle.
+  - **Kite String:** **ONE solid, continuous line** ($14\text{ px}$ wide at 300 DPI) ascending directly from the spool into the bottom corner of the diamond kite.
+  - **Kite Tail:** Flies freely to the right with 3 large ribbon bows, completely separate from the main string ($> 150\text{ px}$ separation).
+  - **Contour Integrity:** Zero unexplained dangling strokes; zero disconnected or overlapping lines across the bear's torso.
 
 ### Scene 004: Fox Painting at an Easel
+- **Review Decision:** **CORRECTED v3** (Previous Task 6 edit FAIL due to sun placed outside easel canvas beside fox's head).
 - **Visual Asset:** `reviews/before_after_004.png`
-- **Previous Defect:** Passive pose with brush hovering away from the canvas; canvas had vague incomplete scribbles.
-- **Refinement Implemented:**
-  - Canvas board updated with **ONE large, simple preschool smiling sun drawing**.
-  - Paintbrush tip clearly touches the canvas outline, creating an active narrative.
-  - Fox character, bushy tail, cute expression, wooden easel, and studio setting preserved 100%.
+- **Previous Defect:** Procedural edit placed the smiling sun outside the easel canvas, floating beside the fox's head/ear.
+- **Task 7 Corrections Implemented:**
+  - Located the true easel canvas board on the tripod easel ($X \in [115..350]$, $Y \in [200..480]$ in raw coords).
+  - Drawn **ONE large smiling sun 100% INSIDE the easel canvas board** ($cx = 250, cy = 412, cr = 46\text{ px}$).
+  - **Preschool Geometry:** 8 uniform, symmetric triangular rays ($45\text{ px}$ long) creating bold enclosed coloring sections for toddlers.
+  - **Brush Interaction:** Paintbrush tip at $(184, 479)$ touches the bottom-left sun ray tip with exact sub-pixel precision, showing active painting.
+  - **Composition Safety:** Floating sun beside the fox's head completely removed; friendly fox, fluffy tail, wooden easel, paint jar, and studio walls 100% preserved.
 
 ### Scene 005: Lion Reading a Picture Book
+- **Review Decision:** **PASS**. Preserved 100% untouched from Task 6.
 - **Visual Asset:** `reviews/before_after_005.png`
-- **Previous Defect:** Overly intricate clothing and necklace; detailed illegible drawings inside the book; complex floor lamp.
-- **Refinement Implemented:**
-  - Clothing and necklace removed, giving the cub a clean, cute, natural preschool body.
-  - Open picture book features **ONE large simple smiling star drawing** (zero tiny text or micro-illustrations).
-  - Cushion simplified to a plain, comfy beanbag cushion; floor lamp replaced with a sleek, minimalist lamp with a straight pole and clean shade.
-  - Smiling lion cub and reading activity fully preserved.
+- **Summary:** Sweet smiling lion cub, open picture book with large smiling star, plain beanbag cushion, minimalist floor lamp.
 
 ---
 
@@ -77,10 +79,11 @@ Detailed review of the changes implemented for Task 6 across Scenes 002–005:
 | Metric | Target Standard | Measured Pilot Values | Compliance Status |
 | :--- | :--- | :--- | :--- |
 | **Target Audience** | Ages 3–5 (Toddlers & Preschoolers) | Preschool Storybook Characters | **PASS** |
-| **Outline Weight** | Bold enclosed curves ($\ge 14\text{ px}$) | $18\text{ px} – 30\text{ px}$ (all scenes) | **PASS** (Zero dropout risk) |
-| **White Fill Ratio** | $\ge 80\%$ open coloring area | $86.4\% – 90.7\%$ (balanced density) | **PASS** |
+| **Outline Weight** | Bold enclosed curves ($\ge 14\text{ px}$) | $14\text{ px} – 28\text{ px}$ (all scenes; string 14 px) | **PASS** (Zero dropout risk) |
+| **White Fill Ratio** | $\ge 80\%$ open coloring area | $85.8\% – 92.6\%$ (balanced density) | **PASS** |
 | **Monochrome Grayscale** | $0.00$ color channel spread | $0.00$ (pure monochrome black/white) | **PASS** |
-| **Anatomical Coherence** | Believable limbs, no extra fingers | Verified on all 5 characters | **PASS** |
+| **Anatomical Coherence** | Believable limbs, complete outlines | Verified on all 5 characters | **PASS** |
+| **Prop Interactions** | Logical and physically plausible | Watering can, strawberry, kite spool, easel brush, book | **PASS** |
 
 ---
 
@@ -126,4 +129,5 @@ ERROR Not human-approved/rights-checked: 001.png
 
 1. **Artwork Generation:** Strictly stopped at Scenes 001–005. Scenes 006–050 remain untouched.
 2. **Human Gates:** `approved: false` and `rights_checked: false` preserved across all 50 scenes in `scenes.json`.
-3. **Awaiting Owner Action:** Account owner visual review of the revised 5-scene pilot contact sheet and before/after comparisons.
+3. **No Paid Charges:** $0.00 spent. Zero credits purchased.
+4. **Awaiting Owner Action:** Account owner final visual review of the corrected 5-scene pilot series before proceeding to print-test PDF generation.
